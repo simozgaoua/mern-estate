@@ -15,13 +15,15 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-    }
+    },
+    avatar:{
+      type: String,
+      default: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+    },
   },
-  // timestamps : going to tell mongodb to record two important extra infos (time of creation and updating if the user)
   { timestamps: true }
 );
 
 const User = mongoose.model('User', userSchema);
 
-// the model is User
 export default User;
